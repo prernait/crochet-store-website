@@ -1,0 +1,722 @@
+<?php
+session_start();
+
+if(isset($_SESSION['username']))
+{
+echo "Welcome " . $_SESSION['username'];
+}
+?>
+
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title> My Crochet Website </title>
+
+  <style>
+
+body
+{
+margin:0;
+padding:0;
+background:url("items/back6.jpg") no-repeat center;
+    background-size:cover;
+  
+}
+#loader
+{
+position:fixed;
+width:100%;
+height:100%;
+background:white;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:25px;
+z-index:1000;
+}
+html
+{
+ scroll-behavior:smooth;
+}
+
+.Top_Header
+ {
+    width:100%;
+    height:15vh;
+    margin:0px;
+    padding:0px;
+    display:flex;
+    align-items:center;
+	background:url("items/bgg1.jpg") no-repeat center;
+    background-size:cover;
+
+  }
+
+#Top_Header_logo
+ {
+    width:30%;
+	padding-left:30px;
+ }
+ 
+
+
+#menubar1
+ {
+   
+   flex:1;
+   display:flex;
+   justify-content:space-around;
+   padding-right:20px;
+   
+   
+ }
+
+.menu1
+ {
+   font-size:20px;
+   background-color:rgb(231,133,173);
+   font-family:Cascadia Code;
+   padding:12px;
+   text-align:center;
+
+ }
+
+a
+ {
+   text-decoration:none;
+   color:black;
+ }
+
+.im1
+ {
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   width:80%;
+   border-radius:100%;
+ }
+
+
+
+.menu1:hover
+ {
+   background-color:pink;
+   cursor:pointer;
+ }
+h2
+ {
+   font-family:Arial;
+   color:white;
+   text-align:center;
+   text-shadow:0px 2px 10px pink;
+ }
+
+.menu1 a
+  {
+     color:black;
+     text-decoration:none;
+     padding:10px 15px;
+     display:block;
+  }
+
+.menu1 a:hover
+  {
+    color:white;
+	transition:0.4s;
+  }
+
+.Top_Header
+  {
+    position:;
+    top:0;
+    z-index:50;
+  }
+
+.search_box
+{
+text-align:center;
+margin:20px;
+}
+
+.search_box input
+{
+padding:8px;
+width:650px;
+border-radius:10px;
+border:1px solid lightgray;
+}
+
+.search_box button
+{
+background:rgb(231,133,173);
+border:none;
+padding:8px 15px;
+border-radius:10px;
+cursor:pointer;
+}
+
+.search_box button:hover
+{
+background:pink;
+}
+
+
+.hero
+{
+ position:relative;
+ width:100%;
+ height:400px;
+ overflow:hidden;
+}
+
+.hero_collage
+{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ grid-template-rows:1fr 1fr;
+ width:100%;
+ height:100%;
+}
+
+.hero_collage img
+{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+}
+
+.hero_text
+{
+ position:absolute;
+ top:50%;
+ left:50%;
+ transform:translate(-50%,-50%);
+ text-align:center;
+ color:white;
+ z-index:2;
+}
+
+.hero_text h2
+{
+ font-size:40px;
+ text-shadow:0px 2px 10px black;
+}
+
+.hero_text p
+{
+ font-size:20px;
+}
+
+.shop_btn
+{
+ padding:10px 20px;
+ border:none;
+ border-radius:20px;
+ background-color:rgb(231,133,173);
+ color:white;
+ cursor:pointer;
+}
+
+.shop_btn:hover
+{
+transform:scale(1.05);
+ background-color:pink;
+ transition:0.4s;
+}
+
+.hero::before
+{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+z-index:1;
+}
+
+.features
+{
+display:flex;
+justify-content:center;
+gap:40px;
+padding:30px;
+}
+
+.feature
+{
+background:white;
+padding:20px;
+border-radius:15px;
+width:200px;
+box-shadow:0px 2px 10px lightgray;
+}
+
+.feature:hover
+{
+transform:scale(1.05);
+background-color:pink;
+ transition:0.4s;
+}
+
+body
+  {
+    margin:0;
+    font-family:Arial;
+    background-color:#fff0f5;
+    text-align:center;
+    background:url("items/back5.jpg") no-repeat center;
+    background-size:cover;
+  }
+   
+
+@keyframes fadeUp
+{
+to
+{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.category_name
+{
+ margin-top:10px;
+ font-weight:bold;
+ color:white;
+}
+
+
+.text_image
+ {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  margin:0px;
+  padding:20px;
+  font-size:20px;
+   box-shadow:0px 0px 0px lightgray;
+  background:url("items/back5.jpg") no-repeat center;
+    background-size:cover;
+ }
+
+.text_image1
+ {
+   width:50%;
+   text-align:justify;
+   padding:0px;
+   
+ }
+
+.text_image2
+ {
+   width:50%;
+   text-align:center;
+   
+ }
+
+img
+{
+ max-width:100%;
+}
+
+
+h1
+{
+ color:rgb(231,133,173);
+ text-align:center;
+ font-family:Arial;
+}
+
+p
+{
+ font-size:22px;
+ line-height:1.6;
+ text-align:center;
+ font-family:Arial;
+ text-shadow:0px 2px 10px white;
+}
+
+
+.products
+{
+ display:flex;
+ justify-content:center;
+ gap:40px;
+ padding:30px;
+
+}
+
+.product
+{
+ text-align:center;
+ background:rgb(231,133,173);
+ padding:15px;
+ border-radius:15px;
+ box-shadow:0px 2px 10px lightgray;
+}
+
+.product img
+{
+ width:180px;
+ height:180px;
+ object-fit:cover;
+ border-radius:15px;
+}
+
+.products1
+{
+ display:flex;
+ justify-content:center;
+ gap:40px;
+ padding:30px;
+}
+
+.product:hover
+{
+ transform:scale(1.05);
+ background-color:pink;
+ cursor:pointer;
+ transition:0.4s;
+}
+.price
+{
+ font-size:18px;
+ color:white;
+ font-weight:bold;
+ margin-top:5px;
+ text-align:center;
+}
+.buy_btn
+{
+ margin-top:10px;
+ padding:8px 15px;
+ border:none;
+ border-radius:15px;
+ background-grey;
+ color:;
+ font-weight:bold;
+ cursor:pointer;
+}
+
+.buy_btn:hover
+{
+ background-color:white;
+ transition:0.4s;
+ transform:scale(1.05);
+}
+.rating
+{
+color:gold;
+font-size:18px;
+}
+
+
+
+.product
+{
+transition:0.4s;
+}
+
+.feature
+{
+transition:0.4s;
+}
+.sale
+{
+position:absolute;
+background:red;
+color:white;
+padding:5px;
+font-size:12px;
+border-radius:5px;
+}
+
+.slider
+{
+overflow:hidden;
+width:90%;
+margin:auto;
+}
+
+.slide_track
+{
+display:flex;
+width:200%;
+animation:scroll 15s linear infinite;
+}
+
+.slide
+{
+width:200px;
+margin:20px;
+text-align:center;
+background:white;
+padding:10px;
+border-radius:15px;
+box-shadow:0px 2px 10px lightgray;
+}
+
+.slide img
+{
+width:150px;
+height:150px;
+object-fit:cover;
+border-radius:15px;
+}
+
+@keyframes scroll
+{
+0%
+{
+transform:translateX(0);
+}
+
+100%
+{
+transform:translateX(-50%);
+}
+}
+.footer
+{
+ text-align:center;
+ background:rgb(231,133,173);
+ color:white;
+ padding:15px;
+ margin-top:20px;
+}
+
+
+</style>
+</head>
+
+<body>
+  <br>
+  <br>
+  <div id="loader">Loading Crochet Store...</div>
+  <script>
+
+window.onload=function()
+{
+document.getElementById("loader").style.display="none";
+}
+
+</script>
+
+ <div class="Top_Header">
+
+ <div id="Top_Header_logo">
+ 
+      <a href="index.html">
+      <img src="items/logo3.png" class="im1">
+      </a>
+ </div>
+
+<div id="menubar1">
+
+  <table width="100%" align="center">
+     <tr>
+        <td class="menu1"> <a href="index.html">Home</a></td>
+		<td class="menu1"> <a href="ABOUT.HTML">About </a></td>
+        <td class="menu1"> <a href="category2.html">Products</a></td>
+        <td class="menu1"><a href="review.php">Reviews</a></td>
+        <td class="menu1"><a href="contact.php">Contact</a></td>
+		<td class="menu1"><a href="login.php">logIn</a></td>
+		<td class="menu1"><a href="signin.php">SignIn</a></td>
+        
+		
+    </tr>
+  </table>
+
+</div>
+
+</div>
+
+<div class="search_box">
+
+<form action="search.php" method="GET">
+
+<input type="text" name="search" placeholder="Search crochet products..." required>
+
+<button type="submit">Search</button>
+
+</form>
+
+</div>
+<br>
+<br>
+<div class="hero">
+
+<div class="hero_collage">
+<img src="items/bag22.jpg">
+<img src="items/keychain3.jpg">
+
+
+</div>
+
+<div class="hero_text">
+
+<h2>Welcome to Crochet by SP </h2>
+<p>Handmade crochet items crafted with love</p>
+
+<a href="category2.html">
+<button class="shop_btn">Shop Now</button>
+</a>
+
+</div>
+
+</div>
+<br>
+
+<div class="text_image">
+
+<div class="text_image1">
+      <h1>CROCHET MADE WITH LOVE</h1>
+   <p>
+      Welcome to a world where every stitch tells a story of warmth, love, and handmade beauty. Each piece is carefully crafted with soft yarn and steady hands, bringing comfort and charm into everyday life. Here, crochet is more than a craft — it’s a heartfelt art woven with care and creativity.
+   </p>
+</div>
+
+ <div class="text_image2">
+
+     <img src="items/intro1.jpg" width="50%">
+	 
+ </div>
+
+</div>
+<br>
+<br>
+<h1>Why Choose Our Crochet?</h1>
+
+<div class="features">
+
+<div class="feature">
+<h3>Handmade</h3>
+<p>Every crochet piece is carefully handmade with love.</p>
+</div>
+
+<div class="feature">
+<h3>Custom Orders</h3>
+<p>You can request colors, designs and sizes.</p>
+</div>
+
+<div class="feature">
+<h3>Unique Designs</h3>
+<p>Each product is unique and not mass produced.</p>
+</div>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>FEATURED PRODUCTS</h1>
+
+<div class="products">
+
+<div class="product">
+<img src="items/cardi3.png"><br><br>
+<div class="category_name">Crop top with long sleeves</div>
+<div class="price">₹1149</div>
+<p class="rating">⭐⭐⭐⭐☆</p>
+<a href="order.php"><button class="buy_btn">Buy Now</button></a>
+</div>
+
+<div class="product">
+<img src="items/keychain7.jpg"><br><br>
+<div class="category_name">SUNFLOWER KEYCHAIN</div><br>
+<div class="price"> ₹199</div>
+<p class="rating">⭐⭐⭐⭐⭐</p>
+<a href="order.php"><button class="buy_btn">Buy Now</button></a>
+</div>
+
+<div class="product">
+<img src="items/bookmark3.jpg"><br><br>
+<div class="category_name"> PINK BOW BOOKMARK</div><br>
+<div class="price"> ₹199</div>
+<p class="rating">⭐⭐⭐⭐☆</p>
+<a href="order.php"><button class="buy_btn">Buy Now</button></a>
+</div>
+
+<div class="product">
+
+<span class="sale">SALE</span>
+
+<img src="items/crochet15.jpg"><br><br>
+<div class="category_name">PINK BOW KEYCHAIN</div><br>
+<div class="price"> ₹299</div>
+<p class="rating">⭐⭐⭐⭐⭐</p>
+<a href="order.php"><button class="buy_btn">Buy Now</button></a>
+</div>
+</div>
+
+<br>
+<br>
+<br>
+<h1>POPULAR CROCHET PRODUCTS</h1>
+
+<div class="slider">
+
+<div class="slide_track">
+
+<div class="slide">
+<img src="items/crochet22.jpg">
+<div class="category_name"><a href="products/products4.html"> BAGS </a></div>
+</div>
+
+<div class="slide">
+<img src="items/scalf1.jpg">
+<div class="category_name"><a href="products/products7.html"> SCARFS</a> </div>
+</div>
+
+<div class="slide">
+<img src="items/crochet1.jpg">
+<div class="category_name"><a href="products/products8.html"> TOYS</a></div>
+</div>
+
+<div class="slide">
+<img src="items/keychain1.jpg">
+<div class="category_name"><a href="products/products2.html">KEYCHAINS</a></div>
+</div>
+
+<div class="slide">
+<img src="items/bookmark1.jpg">
+<div class="category_name"><a href="products/products5.html">BOOKMARKS</a></div>
+</div>
+
+<div class="slide">
+<img src="items/hairband1.jpg">
+<div class="category_name"><a href="products/products3.html"> HAIR ACCESSORIES</a></div>
+</div>
+
+</div>
+
+</div>
+
+<br>
+<br>
+
+<div class="footer">
+
+<p>© 2026 Crochet by SP</p>
+
+<p>
+<a href="index.html">Home</a> |
+<a href="ABOUT.HTML">About</a> |
+<a href="contact.php">Contact</a>
+</p>
+
+<p>Follow us: Instagram: @crochetbysp | WhatsApp:9435241510</p>
+
+</div>
+
+<a href="#" style="position:fixed;bottom:20px;right:20px;
+background:pink;padding:10px;border-radius:40%;">⬆</a>
+
+</body>
+</html>
